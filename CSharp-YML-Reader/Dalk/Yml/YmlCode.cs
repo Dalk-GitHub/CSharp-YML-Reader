@@ -1,4 +1,5 @@
-﻿using System.IO;
+﻿using System;
+using System.IO;
 
 namespace Dalk.Yml
 {
@@ -8,6 +9,7 @@ namespace Dalk.Yml
         {
 
         }
+        private string[] code;
         public YmlCode(YmlFile file)
         {
             Load(file);
@@ -16,13 +18,21 @@ namespace Dalk.Yml
         {
             Load(document);
         }
+        public string GetString(string name)
+        {
+            string s = "";
+
+            return s;
+        }
         public void Load(YmlFile file)
         {
             Document = File.ReadAllText(file.FileName);
+            code = Document.Split(new char[] { '\n' }, StringSplitOptions.RemoveEmptyEntries);
         }
         public void Load(string document)
         {
             Document = document;
+            code = Document.Split(new char[] { '\n' },StringSplitOptions.RemoveEmptyEntries);
         }
         public string Document
         {
