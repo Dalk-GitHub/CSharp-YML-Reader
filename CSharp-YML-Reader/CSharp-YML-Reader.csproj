@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
-    <RootNamespace>CSharp_YML_Reader</RootNamespace>
+    <RootNamespace></RootNamespace>
   </PropertyGroup>
 
 </Project>
