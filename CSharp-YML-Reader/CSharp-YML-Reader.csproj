@@ -3,6 +3,14 @@
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
     <RootNamespace></RootNamespace>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+    <Authors>Dalk</Authors>
+    <PackageId>Dalk.Yml</PackageId>
+    <Product>Dalk.Yml</Product>
+    <Copyright>Dalk</Copyright>
+    <NeutralLanguage />
+    <SignAssembly>false</SignAssembly>
   </PropertyGroup>
 
 </Project>
