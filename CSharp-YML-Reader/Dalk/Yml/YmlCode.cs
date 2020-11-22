@@ -31,6 +31,57 @@ namespace Dalk.Yml
             }
             return res;
         }
+
+        /// <summary>
+        /// not working now
+        /// </summary>
+        /// <param name="name"></param>
+        /// <returns></returns>
+        public string GetSubtree(string name)
+        {
+            string res = "";
+            string[] con = code;
+            int strtline = 0;
+            int endline = 0;
+            int lines = 0;
+            bool started = false;
+            foreach (string s in con)
+            {
+                lines++;
+                if (s.StartsWith(name + ":"))
+                {
+                    started = true;
+                    strtline = lines;
+                }
+
+                if (s.StartsWith("   "))
+                {
+                    if (started == true)
+                    {
+                        if (endline == 0)
+                        {
+                            endline = lines - 1;
+                        }
+
+                        endline++;
+                    }
+                }
+                else started = false;
+            }
+
+            for (int i = 0; i < endline; i++)
+            {
+                if (i > strtline - 1)
+                {
+                    if (i < endline + 1)
+                    {
+                        res += "\n" + con[i];
+                    }
+                }
+            }
+            return res;
+        }
+        
         public bool GetBool(string name)
         {
             string res = "false";
