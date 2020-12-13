@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.IO;
 
 namespace Dalk.Yml
@@ -82,7 +82,7 @@ namespace Dalk.Yml
             }
             return res;
         }*/
-        
+
         public bool GetBool(string name)
         {
             string res = "false";
@@ -114,12 +114,12 @@ namespace Dalk.Yml
         public void Load(YmlFile file)
         {
             Document = File.ReadAllText(file.FileName);
-            code = Document.Split(new char[] { '\n' }, StringSplitOptions.RemoveEmptyEntries);
+            code = File.ReadAllLines(file.FileName);
         }
         public void Load(string document)
         {
             Document = document;
-            code = Document.Split(new char[] { '\n' },StringSplitOptions.RemoveEmptyEntries);
+            code = Document.Split(new char[] { '\n' }, StringSplitOptions.RemoveEmptyEntries);
         }
         public string Document
         {
