@@ -27,6 +27,7 @@ namespace Dalk.Yml
                 if (s.StartsWith(name + ": "))
                 {
                     res = s.Remove(0, name.Length + 2);
+                    break;
                 }
             }
             return res;
@@ -37,7 +38,7 @@ namespace Dalk.Yml
         /// </summary>
         /// <param name="name"></param>
         /// <returns></returns>
-        public string GetSubtree(string name)
+        /*public string GetSubtree(string name)
         {
             string res = "";
             string[] con = code;
@@ -80,7 +81,7 @@ namespace Dalk.Yml
                 }
             }
             return res;
-        }
+        }*/
         
         public bool GetBool(string name)
         {
@@ -91,6 +92,7 @@ namespace Dalk.Yml
                 if (s.StartsWith(name + ": "))
                 {
                     res = s.Remove(0, name.Length + 2);
+                    break;
                 }
             }
             return Convert.ToBoolean(res);
@@ -104,6 +106,7 @@ namespace Dalk.Yml
                 if (s.StartsWith(name + ": "))
                 {
                     res = s.Remove(0, name.Length + 2);
+                    break;
                 }
             }
             return Convert.ToInt32(res);
